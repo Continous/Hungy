@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "hungy",
+	"version": "${version}",
+	"name": "hungy",
+	"description": "A simple mod that enables hunger in peaceful mode.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/hungy/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"xyz.fulmine.hungy.Hungy"
+		],
+		"client": [
+			"xyz.fulmine.hungy.HungyClient"
+		]
+	},
+	"mixins": [
+		"hungy.mixins.json",
+		{
+			"config": "hungy.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

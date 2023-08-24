@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "xyz.fulmine.hungy.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"PeacefulHungerManagerMixin",
+		"PretendNotPeacefulRedirectMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
