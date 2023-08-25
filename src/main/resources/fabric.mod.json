@@ -5,10 +5,10 @@
 	"name": "hungy",
 	"description": "A simple mod that enables hunger in peaceful mode.",
 	"authors": [
-		"Me!"
+		"Jake Fulmine"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "https://modrinth.com/mod/hungy",
 		"sources": "https://github.com/Draconizations/Hungy"
 	},
 	"license": "MIT",
