@@ -9,8 +9,15 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(PlayerEntity.class)
 public class PretendNotPeacefulRedirectMixin {
+    
+    private static Difficulty hungyDifficulty = Difficulty.NORMAL; // Default to Normal
+
     @Redirect(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getDifficulty()Lnet/minecraft/world/Difficulty;"))
     private Difficulty pretendItsNotPeaceful(World world) {
-        return Difficulty.NORMAL;
+        return hungyDifficulty;
+    }
+
+    public static void seHungyDifficulty(Difficulty difficulty) {
+        hungyDifficulty = difficulty;
     }
 }
