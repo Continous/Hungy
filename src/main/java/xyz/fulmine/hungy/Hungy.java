@@ -18,5 +18,6 @@ public class Hungy implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.debug("I'm Hungy (mod has been initialized!)");
+		ConfigHandler.initialize();
 	}
 }
