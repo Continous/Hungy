@@ -6,18 +6,18 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import xyz.fulmine.hungy.config.ConfigHandler;
 
 @Mixin(PlayerEntity.class)
 public class PretendNotPeacefulRedirectMixin {
-    
-    private static Difficulty hungyDifficulty = Difficulty.NORMAL; // Default to Normal
+
+    // Initialize YACL config
+    static {
+        ConfigHandler.initialize();
+    }
 
     @Redirect(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getDifficulty()Lnet/minecraft/world/Difficulty;"))
     private Difficulty pretendItsNotPeaceful(World world) {
-        return hungyDifficulty;
-    }
-
-    public static void seHungyDifficulty(Difficulty difficulty) {
-        hungyDifficulty = difficulty;
+        return ConfigHandler.getHungyDifficulty();
     }
 }
